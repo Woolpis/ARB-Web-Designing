@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARB Web Design — Siti web su misura per aziende | Alessandro Resmini Belotti</title>
+<meta name="description" content="Studio di web design per aziende: siti su misura, eleganti e pensati per portare clienti. Prezzo chiaro, consegna puntuale, proprietà totale del sito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbone:#161411;
+  --carbone-2:#1D1B17;
+  --avorio:#F1EDE4;
+  --avorio-dim:#A8A296;
+  --champagne:#C9A96A;
+  --linea:#2E2B25;
+  --serif:'Fraunces',serif;
+  --sans:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--carbone);color:var(--avorio);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+em{font-style:italic;color:var(--champagne)}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--champagne)}
+.hr{border:none;border-top:1px solid var(--linea)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ===== NAV ===== */
+header{position:sticky;top:0;z-index:60;background:rgba(22,20,17,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .m{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.02em}
+.logo .m i{font-style:normal;color:var(--champagne)}
+.logo .d{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--avorio-dim)}
+.nav-links{display:flex;gap:34px;align-items:center;font-size:13.5px;letter-spacing:.02em}
+.nav-links a:not(.cta){color:var(--avorio-dim);transition:color .2s}
+.nav-links a:not(.cta):hover{color:var(--avorio)}
+.cta{border:1px solid var(--champagne);color:var(--champagne);padding:11px 24px;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;transition:all .25s}
+.cta:hover{background:var(--champagne);color:var(--carbone)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+/* ===== HERO ===== */
+.hero{padding:110px 0 70px;text-align:center}
+.hero .label{display:block;margin-bottom:28px}
+.hero h1{font-size:clamp(44px,7.4vw,92px);max-width:16ch;margin:0 auto}
+.hero .sub{color:var(--avorio-dim);max-width:54ch;margin:30px auto 44px;font-size:17px;font-weight:400}
+.hero-cta{display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-solid{background:var(--champagne);color:var(--carbone);padding:16px 36px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:all .25s;border:1px solid var(--champagne)}
+.btn-solid:hover{background:transparent;color:var(--champagne)}
+.link-quiet{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--avorio-dim);border-bottom:1px solid var(--linea);padding-bottom:4px;transition:all .2s}
+.link-quiet:hover{color:var(--avorio);border-color:var(--champagne)}
+
+/* ===== BEFORE/AFTER ===== */
+.ba-wrap{padding:30px 0 0}
+.ba-caption{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;gap:16px;flex-wrap:wrap}
+.ba-caption .t{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--avorio)}
+.ba-caption .h{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--avorio-dim);text-transform:uppercase}
+.ba{position:relative;overflow:hidden;border:1px solid var(--linea);user-select:none;background:#0E0D0B}
+.chrome{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid rgba(0,0,0,.15)}
+.chrome i{width:9px;height:9px;border-radius:50%;display:block}
+.chrome .url{font-family:var(--mono);font-size:10.5px;padding:4px 14px;border-radius:100px;margin-left:8px}
+.old{background:#ECE9DD}
+.old .chrome{background:#D8D4C4}
+.old .chrome i{background:#B9B4A0}
+.old .chrome .url{background:#F6F4EA;color:#847E66}
+.old-body{padding:22px 26px;font-family:'Times New Roman',serif;color:#3A3A3A;min-height:330px}
+.old-body .banner{background:linear-gradient(#5B78B5,#3C5796);color:#FFF;text-align:center;padding:13px;font-size:21px;font-weight:bold;text-shadow:1px 1px 0 #223;letter-spacing:1px}
+.old-body .marq{background:#FFFF99;color:#B00;font-size:12px;padding:4px 8px;white-space:nowrap;overflow:hidden;border:1px dashed #B00;margin:10px 0}
+.old-body .marq span{display:inline-block;animation:scrollmarq 9s linear infinite}
+@keyframes scrollmarq{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+.old-body table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px}
+.old-body td{border:1px solid #9A9682;padding:7px;vertical-align:top;background:#F7F5EC}
+.old-body .lnk{color:#0000CC;text-decoration:underline}
+.old-body .visited{color:#7A1FA2;text-decoration:underline}
+.old-body .counter{font-size:10px;color:#777;margin-top:12px}
+.new{background:#12100D;position:absolute;inset:0;clip-path:inset(0 0 0 var(--cut,50%))}
+.new .chrome{background:#1A1815;border-bottom-color:rgba(255,255,255,.05)}
+.new .chrome i{background:#2C2924}
+.new .chrome .url{background:#0C0B09;color:#8B8578}
+.new-body{padding:34px;min-height:330px;color:var(--avorio)}
+.new-body .tag{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--champagne);text-transform:uppercase}
+.new-body h4{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.6vw,40px);margin:14px 0 12px;line-height:1.1}
+.new-body h4 i{color:var(--champagne)}
+.new-body p{color:#9A937F;font-size:13.5px;max-width:42ch}
+.new-body .pill{display:inline-block;border:1px solid var(--champagne);color:var(--champagne);padding:10px 22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;margin-top:18px}
+.new-body .row{display:flex;gap:28px;margin-top:26px;border-top:1px solid #262320;padding-top:16px}
+.new-body .row div b{font-family:var(--serif);font-size:17px;font-weight:500;display:block}
+.new-body .row div span{font-size:11px;color:#8B8578;font-family:var(--mono);letter-spacing:.06em}
+.ba-divider{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:1px;background:var(--champagne);z-index:5;pointer-events:none}
+.ba-handle{position:absolute;top:50%;left:var(--cut,50%);transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--carbone);border:1px solid var(--champagne);color:var(--champagne);display:grid;place-items:center;font-size:14px;z-index:6;pointer-events:none;font-family:var(--mono)}
+.ba-badge{position:absolute;top:16px;right:16px;z-index:7;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;padding:7px 18px;pointer-events:none;transition:all .25s;background:rgba(236,233,221,.92);color:#6B6650;border:1px solid rgba(0,0,0,.1)}
+.ba-badge.dopo{background:var(--champagne);color:var(--carbone);border-color:transparent}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:10;margin:0}
+
+/* ===== SEZIONI ===== */
+section{padding:110px 0}
+.sec-head{margin-bottom:64px}
+.sec-head h2{font-size:clamp(32px,4.6vw,58px);margin-top:18px;max-width:22ch}
+.sec-head .intro{color:var(--avorio-dim);max-width:58ch;margin-top:18px;font-size:16px}
+
+/* servizi — lista sartoriale */
+.serv{border-top:1px solid var(--linea)}
+.s-item{display:grid;grid-template-columns:90px 1fr auto;gap:30px;align-items:baseline;padding:38px 4px;border-bottom:1px solid var(--linea);transition:padding .25s}
+.s-item:hover{padding-left:18px}
+.s-item .num{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--champagne)}
+.s-item h3{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px}
+.s-item p{color:var(--avorio-dim);font-size:14.5px;max-width:58ch}
+.s-item .price{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--avorio);white-space:nowrap;text-align:right}
+.s-item .price span{display:block;color:var(--avorio-dim);font-size:10.5px;margin-top:4px}
+
+/* metodo — sezione agganciata allo scroll */
+.metodo-pin{padding:0}
+.pin-active .metodo-pin{height:280vh}
+.metodo-sticky{position:relative;padding:90px 0}
+.pin-active .metodo-sticky{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0}
+.metodo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid var(--linea)}
+.m-step{padding:8px 26px;border-right:1px solid var(--linea)}
+.pin-active .m-step{opacity:0;transform:translateY(34px);transition:opacity .55s cubic-bezier(.2,.6,.2,1),transform .55s cubic-bezier(.2,.6,.2,1)}
+.pin-active .m-step.on{opacity:1;transform:none}
+.m-step .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--champagne);display:inline-block;position:relative;padding-bottom:10px}
+.m-step .n::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--champagne)}
+.pin-active .m-step .n::after{transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.6,.2,1) .25s}
+.pin-active .m-step.on .n::after{transform:scaleX(1)}
+.m-step h3{font-size:19px;margin:16px 0 10px}
+.m-step p{font-size:13.5px;color:var(--avorio-dim)}
+.m-step .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:#6E6858;display:block;margin-top:16px}
+.pin-hint{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:#6E6858;text-transform:uppercase;margin-top:40px;text-align:center;opacity:0;transition:opacity .5s}
+.pin-active .pin-hint{opacity:1}
+.pin-active .metodo-sticky.done .pin-hint{opacity:0}
+
+/* garanzie — trust */
+.garanzie{background:var(--carbone-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.g-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px}
+.g-item .label{display:block;margin-bottom:14px}
+.g-item h3{font-size:21px;margin-bottom:10px}
+.g-item p{font-size:14px;color:var(--avorio-dim)}
+
+/* firma personale */
+.firma{text-align:center}
+.firma blockquote{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-style:italic;font-weight:300;max-width:30ch;margin:0 auto;line-height:1.4}
+.firma .who{margin-top:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--avorio-dim)}
+.firma .who b{color:var(--champagne);font-weight:500}
+
+/* ===== CONTATTO ===== */
+.contatto{border-top:1px solid var(--linea)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.c-grid h2{font-size:clamp(30px,4vw,52px);margin-top:18px}
+.c-grid .lead{color:var(--avorio-dim);margin-top:18px;max-width:44ch}
+.direct{margin-top:36px;display:grid;gap:16px}
+.direct a{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--avorio);border-bottom:1px solid var(--linea);width:fit-content;padding-bottom:5px;transition:border-color .2s}
+.direct a:hover{border-color:var(--champagne)}
+form{display:grid;gap:20px;border:1px solid var(--linea);padding:38px;background:var(--carbone-2)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--avorio-dim);display:grid;gap:9px}
+input,select,textarea{font-family:var(--sans);font-size:15px;padding:13px 2px;border:none;border-bottom:1px solid var(--linea);background:transparent;width:100%;color:var(--avorio);border-radius:0;transition:border-color .2s}
+select{cursor:pointer}
+select option{background:var(--carbone-2);color:var(--avorio)}
+input:focus,select:focus,textarea:focus{border-color:var(--champagne);outline:none}
+input::placeholder,textarea::placeholder{color:#57534A}
+textarea{min-height:96px;resize:vertical}
+form .btn-solid{justify-self:start;cursor:pointer}
+.form-note{font-size:11.5px;color:#6E6858;font-family:var(--sans);letter-spacing:0;text-transform:none}
+.ok-msg{display:none;border:1px solid var(--champagne);color:var(--champagne);padding:12px 16px;font-size:13px;font-family:var(--mono);letter-spacing:.06em}
+
+/* footer */
+footer{border-top:1px solid var(--linea);padding:38px 0;color:#6E6858;font-size:12.5px;font-family:var(--mono);letter-spacing:.06em}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a:hover{color:var(--champagne)}
+
+@media(max-width:920px){
+  .metodo-grid{grid-template-columns:1fr 1fr}
+  .m-step{padding:22px 26px;border-bottom:1px solid var(--linea)}
+  .g-grid,.c-grid{grid-template-columns:1fr;gap:40px}
+  .nav-links a:not(.cta){display:none}
+  section{padding:76px 0}
+  .s-item{grid-template-columns:56px 1fr;row-gap:12px}
+  .s-item .price{grid-column:2;text-align:left}
+  .s-item .price span{display:inline;margin-left:10px}
+}
+@media(max-width:560px){
+  .metodo-grid{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .hero{padding:80px 0 50px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top"><span class="m">ARB<i>.</i></span><span class="d">Web Design</span></a>
+      <div class="nav-links">
+        <a href="#servizi">Servizi</a>
+        <a href="#metodo">Metodo</a>
+        <a href="#garanzie">Garanzie</a>
+        <a class="cta" href="#contatto">Richiedi preventivo</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="label rv">Studio di web design · Brescia</span>
+    <h1 class="rv">Il sito web che la tua azienda <em>merita.</em></h1>
+    <p class="sub rv">Siti su misura per aziende e attività che vogliono presentarsi al meglio e trasformare i visitatori in clienti. Un solo interlocutore, un prezzo chiaro, una consegna puntuale.</p>
+    <div class="hero-cta rv">
+      <a class="btn-solid" href="#contatto">Richiedi un preventivo</a>
+      <a class="link-quiet" href="#ba">Guarda la differenza ↓</a>
+    </div>
+  </div>
+</div>
+
+<div class="ba-wrap" id="ba">
+  <div class="wrap">
+    <div class="ba-caption rv">
+      <span class="t">Prima e dopo, senza parole.</span>
+      <span class="h">↔ trascina il cursore</span>
+    </div>
+    <div class="ba rv" id="baBox">
+      <div class="pane old">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">www.azienda-rossi.it/home.htm</span></div>
+        <div class="old-body">
+          <div class="banner">BENVENUTI NEL SITO DELLA DITTA ROSSI SNC</div>
+          <div class="marq"><span>*** SITO IN COSTRUZIONE — ULTIMO AGGIORNAMENTO: 14/03/2011 — VISITATE LA NOSTRA PAGINA ***</span></div>
+          <table>
+            <tr>
+              <td width="30%">
+                <b>MENU:</b><br>
+                <span class="lnk">Home page</span><br>
+                <span class="visited">Chi siamo</span><br>
+                <span class="lnk">I nostri prodotti</span><br>
+                <span class="lnk">Dove siamo</span><br>
+                <span class="lnk">Contattaci!!!</span>
+              </td>
+              <td>
+                La ditta Rossi opera nel settore da oltre 30 anni garantendo serietà e professionalità. Contattateci per un preventivo ai numeri in fondo alla pagina oppure inviate un fax.<br><br>
+                <center><i>« La qualità al primo posto »</i></center>
+              </td>
+            </tr>
+          </table>
+          <div class="counter">Visite: 004821 — Sito ottimizzato per Internet Explorer 6 — Risoluzione 800×600</div>
+        </div>
+      </div>
+      <div class="pane new">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">www.aziendarossi.it</span></div>
+        <div class="new-body">
+          <span class="tag">Officina meccanica · dal 1991</span>
+          <h4>Precisione che si vede.<br>Anche <i>online.</i></h4>
+          <p>Lavorazioni conto terzi con consegne rapide e qualità certificata. Richiedi un preventivo in due minuti.</p>
+          <span class="pill">Richiedi preventivo</span>
+          <div class="row">
+            <div><b>30+</b><span>anni di esperienza</span></div>
+            <div><b>48h</b><span>tempo di risposta</span></div>
+            <div><b>ISO 9001</b><span>qualità certificata</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-divider"></div>
+      <div class="ba-handle">↔</div>
+      <span class="ba-badge" id="baBadge">PRIMA</span>
+      <input type="range" min="0" max="100" value="50" step="0.1" aria-label="Confronto prima e dopo: trascina per rivelare il sito rinnovato" id="baRange">
+    </div>
+  </div>
+</div>
+
+<section id="servizi">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Servizi</span>
+      <h2>Tre percorsi. Un prezzo scritto, <em>prima</em> di iniziare.</h2>
+      <p class="intro">Nessuna sorpresa in fattura: mi racconti cosa ti serve, ricevi una proposta scritta con prezzo fisso e data di consegna. Quello che firmi è quello che paghi.</p>
+    </div>
+    <div class="serv">
+      <div class="s-item rv">
+        <span class="num">I.</span>
+        <div>
+          <h3>Sito vetrina</h3>
+          <p>Una pagina essenziale ed elegante: chi sei, cosa fai, dove trovarti, contatto diretto WhatsApp e scheda Google curata. Per attività locali che vogliono esserci, e bene.</p>
+        </div>
+        <div class="price">DA € 350<span>consegna in 5 giorni</span></div>
+      </div>
+      <div class="s-item rv">
+        <span class="num">II.</span>
+        <div>
+          <h3>Sito aziendale</h3>
+          <p>Più pagine, testi scritti con cura, gallerie, modulo contatti e ottimizzazione per i motori di ricerca. Disponibile in più lingue per chi lavora con l'estero.</p>
+        </div>
+        <div class="price">DA € 600<span>consegna in 2–3 settimane</span></div>
+      </div>
+      <div class="s-item rv">
+        <span class="num">III.</span>
+        <div>
+          <h3>Restyling &amp; cura continua</h3>
+          <p>Il tuo sito esiste ma è invecchiato male? Lo ridisegno mantenendo i contenuti, poi me ne prendo cura ogni mese: aggiornamenti, modifiche, tranquillità.</p>
+        </div>
+        <div class="price">DA € 500<span>poi € 100 al mese</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="metodo-pin">
+  <div class="metodo-sticky" id="metodoSticky">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:48px">
+        <span class="label">Metodo</span>
+        <h2>Quattro passaggi, nessuna incognita.</h2>
+      </div>
+      <div class="metodo-grid">
+        <div class="m-step" data-step="0"><span class="n">01</span><h3>Ascolto</h3><p>Mi racconti la tua attività e i tuoi obiettivi. Analizziamo insieme come si presentano i tuoi concorrenti.</p><span class="t">30 minuti · senza impegno</span></div>
+        <div class="m-step" data-step="1"><span class="n">02</span><h3>Proposta</h3><p>Ricevi un preventivo scritto: prezzo fisso, tempi certi, tutto ciò che è incluso nero su bianco.</p><span class="t">entro 24 ore</span></div>
+        <div class="m-step" data-step="2"><span class="n">03</span><h3>Realizzazione</h3><p>Costruisco il sito e ti presento l'anteprima privata. Una revisione completa è sempre inclusa.</p><span class="t">da 5 giorni</span></div>
+        <div class="m-step" data-step="3"><span class="n">04</span><h3>Consegna</h3><p>Il sito va online, collegato a Google. Il codice e i contenuti diventano tuoi, per sempre.</p><span class="t">proprietà totale</span></div>
+      </div>
+      <p class="pin-hint">Continua a scorrere</p>
+    </div>
+  </div>
+</section>
+
+<section class="garanzie" id="garanzie">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Garanzie</span>
+      <h2>La fiducia si costruisce <em>per iscritto.</em></h2>
+    </div>
+    <div class="g-grid">
+      <div class="g-item rv">
+        <span class="label">— 01</span>
+        <h3>Prezzo bloccato</h3>
+        <p>Il preventivo firmato è definitivo. Nessun costo aggiuntivo non concordato, mai.</p>
+      </div>
+      <div class="g-item rv">
+        <span class="label">— 02</span>
+        <h3>60 giorni di garanzia</h3>
+        <p>Qualsiasi malfunzionamento dopo la consegna viene corretto gratuitamente, per due mesi.</p>
+      </div>
+      <div class="g-item rv">
+        <span class="label">— 03</span>
+        <h3>Il sito è tuo</h3>
+        <p>A saldo avvenuto, codice, contenuti e dominio sono di tua esclusiva proprietà. Nessun vincolo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contatto" id="contatto" style="padding-bottom:120px">
+  <div class="wrap c-grid">
+    <div class="rv">
+      <span class="label">Contatto</span>
+      <h2>Raccontami la tua <em>attività.</em></h2>
+      <p class="lead">Rispondo personalmente entro 24 ore con una proposta concreta. La prima consulenza è sempre gratuita e senza impegno.</p>
+      <div class="direct">
+        <a href="https://wa.me/39XXXXXXXXXX?text=Buongiorno%20Alessandro%2C%20vorrei%20informazioni%20per%20un%20sito%20web">WhatsApp diretto →</a>
+        <a href="mailto:aleresminib@gmail.com">aleresminib@gmail.com →</a>
+      </div>
+    </div>
+    <!-- Registrati su formspree.io e sostituisci TUO-ID. Finché non lo fai, il pulsante apre l'email precompilata. -->
+    <form id="reqForm" action="https://formspree.io/f/TUO-ID" method="POST" class="rv">
+      <div class="f-row">
+        <label>Nome e cognome<input type="text" name="nome" required placeholder="Mario Rossi"></label>
+        <label>Azienda<input type="text" name="azienda" placeholder="Rossi Snc"></label>
+      </div>
+      <div class="f-row">
+        <label>Email<input type="email" name="email" required placeholder="mario@rossi.it"></label>
+        <label>Telefono<input type="tel" name="telefono" placeholder="333 1234567"></label>
+      </div>
+      <div class="f-row">
+        <label>Cosa ti serve
+          <select name="tipo" required>
+            <option value="" disabled selected>Seleziona…</option>
+            <option>Nuovo sito vetrina</option>
+            <option>Sito aziendale completo</option>
+            <option>Restyling del sito attuale</option>
+            <option>Sito multilingua</option>
+            <option>Cura mensile del sito</option>
+            <option>Non lo so ancora, parliamone</option>
+          </select>
+        </label>
+        <label>Sito attuale<input type="text" name="sito_attuale" placeholder="www.tuosito.it (se esiste)"></label>
+      </div>
+      <label>La tua attività, in due righe<textarea name="messaggio" placeholder="Es. Officina meccanica a Brescia, il sito è fermo al 2012 e non porta contatti…"></textarea></label>
+      <button class="btn-solid" type="submit">Invia la richiesta</button>
+      <p class="ok-msg" id="okMsg">Richiesta inviata. Ti rispondo entro 24 ore.</p>
+      <p class="form-note">Inviando accetti di essere ricontattato ai recapiti indicati. Nessuna newsletter, nessuno spam.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 ARB Web Design — Alessandro Resmini Belotti · Brescia</div>
+    <div><a href="#top">Torna su ↑</a></div>
+  </div>
+</footer>
+
+<script>
+const box = document.getElementById('baBox');
+const range = document.getElementById('baRange');
+const badge = document.getElementById('baBadge');
+function setCut(v){
+  box.style.setProperty('--cut', v + '%');
+  const dopo = v < 50;
+  badge.textContent = dopo ? 'DOPO' : 'PRIMA';
+  badge.classList.toggle('dopo', dopo);
+}
+range.addEventListener('input', e => setCut(parseFloat(e.target.value)));
+setCut(50);
+
+// reveal generico — ora ripetibile: si attiva e disattiva ogni volta che entri/esci
+const io = new IntersectionObserver(es => {
+  es.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// metodo — sequenza agganciata allo scroll (reversibile)
+const pinOk = window.matchMedia('(min-width:921px)').matches &&
+              !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (pinOk) {
+  document.body.classList.add('pin-active');
+  const sec = document.getElementById('metodo');
+  const sticky = document.getElementById('metodoSticky');
+  const steps = sec.querySelectorAll('.m-step');
+  let ticking = false;
+  function updatePin() {
+    ticking = false;
+    const total = sec.offsetHeight - window.innerHeight;
+    const p = Math.min(1, Math.max(0, -sec.getBoundingClientRect().top / total));
+    steps.forEach((s, i) => {
+      // ogni passo appare quando lo scroll supera la sua soglia: 12%, 34%, 56%, 78%
+      s.classList.toggle('on', p >= 0.12 + i * 0.22);
+    });
+    sticky.classList.toggle('done', p >= 0.9);
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(updatePin); }
+  }, { passive: true });
+  window.addEventListener('resize', updatePin);
+  updatePin();
+}
+
+const form = document.getElementById('reqForm');
+form.addEventListener('submit', function (e) {
+  if (form.action.includes('TUO-ID')) {
+    e.preventDefault();
+    const d = new FormData(form);
+    const body = encodeURIComponent(
+      `Nome: ${d.get('nome')}\nAzienda: ${d.get('azienda')}\nEmail: ${d.get('email')}\nTelefono: ${d.get('telefono')}\nRichiesta: ${d.get('tipo')}\nSito attuale: ${d.get('sito_attuale')}\n\n${d.get('messaggio')}`
+    );
+    window.location.href = `mailto:aleresminib@gmail.com?subject=${encodeURIComponent('Richiesta preventivo — ' + (d.get('azienda') || d.get('nome')))}&body=${body}`;
+    document.getElementById('okMsg').style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>
